@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Banners</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura do body para 100% da altura da viewport */
+    background-color: black;
+}
+
+.carrossel {
+    width: 80%; /* Ajuste a largura do carrossel conforme necessário */
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: opacity 1s ease-in-out;
+}
+
+.slides img {
+    width: 100px; /* Faz com que a imagem ocupe 100% da largura do contêiner */
+    height: 800px; /* Defina a altura desejada para as imagens */
+    object-fit: cover; /* Faz com que a imagem cubra o espaço definido, mantendo a proporção */
+    min-width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="carrossel">
+        <div class="slides">
+            <img src="https://images.pexels.com/photos/3007208/pexels-photo-3007208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 1">
+            <img src="https://images.pexels.com/photos/4759630/pexels-photo-4759630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 2">
+            <img src="https://images.pexels.com/photos/17438661/pexels-photo-17438661/free-photo-of-a-ultima-cancao-de-uma-sereia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 4">
+            <img src="https://images.pexels.com/photos/1129382/pexels-photo-1129382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 5">
+            <img src="https://images.pexels.com/photos/8539559/pexels-photo-8539559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 6">
+            <img src="https://images.pexels.com/photos/4759627/pexels-photo-4759627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 7">
+            <img src="https://images.pexels.com/photos/537459/pexels-photo-537459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 8">
+            <img src="https://images.pexels.com/photos/7621725/pexels-photo-7621725.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 9">
+            <img src="https://images.pexels.com/photos/27047489/pexels-photo-27047489/free-photo-of-clima-frio-com-frio-geleira.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Banner 10">
+        </div>
+    </div>
+    <script >
+        let index = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slides img').length;
+
+    function showNextSlide() {
+    index = (index + 1) % totalSlides; // Loop de 0 a totalSlides - 1
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+setInterval(showNextSlide, 3000); // Muda de slide a cada 3 segundos
+    </script>
+</body>
+</html>
